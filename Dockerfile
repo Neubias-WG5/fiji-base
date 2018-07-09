@@ -18,7 +18,7 @@ RUN mkdir -p /fiji && cd /fiji && \
     jrunscript bootstrap.js update-force-pristine
 
 # create a sym-link with the name jars/ij.jar that is pointing to the current version jars/ij-1.nm.jar
-RUN cd /fiji && ln -s $(ls jars/ij-1.*.jar) jars/ij.jar
+RUN cd /fiji/jars && ln -s $(ls ij-1.*.jar) ij.jar
 
 # Add fiji to the PATH
 ENV PATH $PATH:/fiji
