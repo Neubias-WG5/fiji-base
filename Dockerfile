@@ -2,6 +2,9 @@ FROM neubiaswg5/neubias-base
 
 # Java is installed in neubiaswg5/neubias-base.
 
+# Install virtual X server
+RUN apt-get update && apt-get install -y curl xvfb libx11-dev libxtst-dev libxrender-dev
+
 # Install Fiji.
 RUN mkdir -p /fiji && cd /fiji && \
     curl -O http://update.imagej.net/bootstrap.js && \
